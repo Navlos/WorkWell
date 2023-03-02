@@ -1,0 +1,12 @@
+<h1>Task List</h1>
+
+
+{% for task in tasks %}
+    {{task.title}} <br>
+     <a href="{% url 'task' task.id %}">View details</a>
+
+    {% empty %}
+    <h3>No items in List</h3>
+
+{% endfor %}
+    

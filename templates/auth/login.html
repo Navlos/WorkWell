@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkWell | Login </title>
+    <link rel="stylesheet" href="{% static 'auth/login.css' %}">
+</head>
+<body>
+    <a href="{% url 'home' %}">back</a>
+    <div class="wrapper">
+        <h1>Welcome Back</h1>
+        <p>Login to start boosting your productivity</p>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="Username">Username:</label><br>
+            <input type="text" name="username" id="" placeholder = "Enter Username"> <br>
+            <label for="password">password:</label> <br>
+            <input type="password" name="password" id="" placeholder = "Enter password"> <br>
+            <button>Access Account</button>
+        </form>
+        <p>Don't have an account?<a href="{% url 'register' %}">Register</a></p>
+    </div>
+
+
+</body>
+</html>
